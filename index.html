@@ -1,0 +1,3925 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+	
+	<script type="text/javascript" src="pacoords.js"> </script>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 1.3521, lng: 103.8198},
+			zoom: 12
+        });
+		
+		var aliveState = 0 //0.35
+		var deadState = 1
+		var strongState = 0.5 //0.5
+		var paColor = '#FF0000'
+		var szColor = '#FF0000'
+		
+		var bishanPAPolygon = new google.maps.Polygon({
+			paths: bishanPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		bishanPAPolygon.setMap(map);
+		var bukitbatokPAPolygon = new google.maps.Polygon({
+			paths: bukitbatokPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		bukitbatokPAPolygon.setMap(map);
+		var bukitmerahPAPolygon = new google.maps.Polygon({
+			paths: bukitmerahPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		bukitmerahPAPolygon.setMap(map);
+		var bukitpanjangPAPolygon = new google.maps.Polygon({
+			paths: bukitpanjangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: deadState
+		});
+		bukitpanjangPAPolygon.setMap(map);
+		var bukittimahPAPolygon = new google.maps.Polygon({
+			paths: bukittimahPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		bukittimahPAPolygon.setMap(map);
+		var centralwatercatchmentPAPolygon = new google.maps.Polygon({
+			paths: centralwatercatchmentPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		centralwatercatchmentPAPolygon.setMap(map);
+		var changiPAPolygon = new google.maps.Polygon({
+			paths: changiPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		changiPAPolygon.setMap(map);
+		var changibayPAPolygon = new google.maps.Polygon({
+			paths: changibayPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		changibayPAPolygon.setMap(map);
+		var choachukangPAPolygon = new google.maps.Polygon({
+			paths: choachukangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		choachukangPAPolygon.setMap(map);
+		var clementiPAPolygon = new google.maps.Polygon({
+			paths: clementiPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		clementiPAPolygon.setMap(map);
+		var geylangPAPolygon = new google.maps.Polygon({
+			paths: geylangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		geylangPAPolygon.setMap(map);
+		var novenaPAPolygon = new google.maps.Polygon({
+			paths: novenaPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		novenaPAPolygon.setMap(map);
+		var pasirrisPAPolygon = new google.maps.Polygon({
+			paths: pasirrisPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		pasirrisPAPolygon.setMap(map);
+		var payalebarPAPolygon = new google.maps.Polygon({
+			paths: payalebarPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: deadState
+		});
+		payalebarPAPolygon.setMap(map);
+		var seletarPAPolygon = new google.maps.Polygon({
+			paths: seletarPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		seletarPAPolygon.setMap(map);
+		var sembawangPAPolygon = new google.maps.Polygon({
+			paths: sembawangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		sembawangPAPolygon.setMap(map);
+		var bedokPAPolygon = new google.maps.Polygon({
+			paths: bedokPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		bedokPAPolygon.setMap(map);
+		var boonlayPAPolygon = new google.maps.Polygon({
+			paths: boonlayPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: deadState
+		});
+		boonlayPAPolygon.setMap(map);
+		var sengkangPAPolygon = new google.maps.Polygon({
+			paths: sengkangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		sengkangPAPolygon.setMap(map);
+		var serangoonPAPolygon = new google.maps.Polygon({
+			paths: serangoonPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		serangoonPAPolygon.setMap(map);
+		var angmokioPAPolygon = new google.maps.Polygon({
+			paths: angmokioPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		angmokioPAPolygon.setMap(map);
+		var tengahPAPolygon = new google.maps.Polygon({
+			paths: tengahPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		tengahPAPolygon.setMap(map);
+		var toapayohPAPolygon = new google.maps.Polygon({
+			paths: toapayohPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		toapayohPAPolygon.setMap(map);
+		var westernwatercatchmentPAPolygon = new google.maps.Polygon({
+			paths: westernwatercatchmentPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		westernwatercatchmentPAPolygon.setMap(map);
+		var yishunPAPolygon = new google.maps.Polygon({
+			paths: yishunPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		yishunPAPolygon.setMap(map);
+		var downtowncorePAPolygon = new google.maps.Polygon({
+			paths: downtowncorePA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		downtowncorePAPolygon.setMap(map);
+		var marinaeastPAPolygon = new google.maps.Polygon({
+			paths: marinaeastPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		marinaeastPAPolygon.setMap(map);
+		var newtonPAPolygon = new google.maps.Polygon({
+			paths: newtonPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		newtonPAPolygon.setMap(map);
+		var orchardPAPolygon = new google.maps.Polygon({
+			paths: orchardPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		orchardPAPolygon.setMap(map);
+		var woodlandsPAPolygon = new google.maps.Polygon({
+			paths: woodlandsPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		woodlandsPAPolygon.setMap(map);
+		var marinasouthPAPolygon = new google.maps.Polygon({
+			paths: marinasouthPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		marinasouthPAPolygon.setMap(map);
+		var museumPAPolygon = new google.maps.Polygon({
+			paths: museumPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		museumPAPolygon.setMap(map);
+		var hougangPAPolygon = new google.maps.Polygon({
+			paths: hougangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		hougangPAPolygon.setMap(map);
+		var jurongeastPAPolygon = new google.maps.Polygon({
+			paths: jurongeastPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		jurongeastPAPolygon.setMap(map);
+		var limchukangPAPolygon = new google.maps.Polygon({
+			paths: limchukangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		limchukangPAPolygon.setMap(map);
+		var mandaiPAPolygon = new google.maps.Polygon({
+			paths: mandaiPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		mandaiPAPolygon.setMap(map);
+		var marineparadePAPolygon = new google.maps.Polygon({
+			paths: marineparadePA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		marineparadePAPolygon.setMap(map);
+		var northeasternislandsPAPolygon = new google.maps.Polygon({
+			paths: northeasternislandsPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		northeasternislandsPAPolygon.setMap(map);
+		var northeasternislandsPAPolygon = new google.maps.Polygon({
+			paths: northeasternislandsPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		northeasternislandsPAPolygon.setMap(map);
+		var pioneerPAPolygon = new google.maps.Polygon({
+			paths: pioneerPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		pioneerPAPolygon.setMap(map);
+		var punggolPAPolygon = new google.maps.Polygon({
+			paths: punggolPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		punggolPAPolygon.setMap(map);
+		var queenstownPAPolygon = new google.maps.Polygon({
+			paths: queenstownPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		queenstownPAPolygon.setMap(map);
+		var southernislandsPAPolygon = new google.maps.Polygon({
+			paths: southernislandsPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		southernislandsPAPolygon.setMap(map);
+		var tuasPAPolygon = new google.maps.Polygon({
+			paths: tuasPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		tuasPAPolygon.setMap(map);
+		var jurongwestPAPolygon = new google.maps.Polygon({
+			paths: jurongwestPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		jurongwestPAPolygon.setMap(map);
+		var kallangPAPolygon = new google.maps.Polygon({
+			paths: kallangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		kallangPAPolygon.setMap(map);
+		var simpangPAPolygon = new google.maps.Polygon({
+			paths: simpangPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		simpangPAPolygon.setMap(map);
+		var sungeikadutPAPolygon = new google.maps.Polygon({
+			paths: sungeikadutPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		sungeikadutPAPolygon.setMap(map);
+		var tampinesPAPolygon = new google.maps.Polygon({
+			paths: tampinesPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		tampinesPAPolygon.setMap(map);
+		var westernislandsPAPolygon = new google.maps.Polygon({
+			paths: westernislandsPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		westernislandsPAPolygon.setMap(map);
+		var tanglinPAPolygon = new google.maps.Polygon({
+			paths: tanglinPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		tanglinPAPolygon.setMap(map);
+		var outramPAPolygon = new google.maps.Polygon({
+			paths: outramPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		outramPAPolygon.setMap(map);
+		var rivervalleyPAPolygon = new google.maps.Polygon({
+			paths: rivervalleyPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: deadState
+		});
+		rivervalleyPAPolygon.setMap(map);
+		var rochorPAPolygon = new google.maps.Polygon({
+			paths: rochorPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		rochorPAPolygon.setMap(map);
+		var singaporeriverPAPolygon = new google.maps.Polygon({
+			paths: singaporeriverPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		singaporeriverPAPolygon.setMap(map);
+		var straitsviewPAPolygon = new google.maps.Polygon({
+			paths: straitsviewPA,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: paColor,
+			fillOpacity: aliveState
+		});
+		straitsviewPAPolygon.setMap(map);
+		
+		// startsz
+		var peoplesparkSZPolygon = new google.maps.Polygon({
+			paths: peoplesparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		peoplesparkSZPolygon.setMap(map);
+		var bukitmerahSZPolygon = new google.maps.Polygon({
+			paths: bukitmerahSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bukitmerahSZPolygon.setMap(map);
+		var chinatownSZPolygon = new google.maps.Polygon({
+			paths: chinatownSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		chinatownSZPolygon.setMap(map);
+		var phillipSZPolygon = new google.maps.Polygon({
+			paths: phillipSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		phillipSZPolygon.setMap(map);
+		var rafflesplaceSZPolygon = new google.maps.Polygon({
+			paths: rafflesplaceSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		rafflesplaceSZPolygon.setMap(map);
+		var chinasquareSZPolygon = new google.maps.Polygon({
+			paths: chinasquareSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		chinasquareSZPolygon.setMap(map);
+		var tiongbahruSZPolygon = new google.maps.Polygon({
+			paths: tiongbahruSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#ffff00',
+			fillOpacity: strongState
+		});
+		tiongbahruSZPolygon.setMap(map);
+		var bayfrontsubzoneSZPolygon = new google.maps.Polygon({
+			paths: bayfrontsubzoneSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bayfrontsubzoneSZPolygon.setMap(map);
+		var tiongbahrustationSZPolygon = new google.maps.Polygon({
+			paths: tiongbahrustationSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tiongbahrustationSZPolygon.setMap(map);
+		var cliffordpierSZPolygon = new google.maps.Polygon({
+			paths: cliffordpierSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		cliffordpierSZPolygon.setMap(map);
+		var marinasouthSZPolygon = new google.maps.Polygon({
+			paths: marinasouthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		marinasouthSZPolygon.setMap(map);
+		var pearlshillSZPolygon = new google.maps.Polygon({
+			paths: pearlshillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pearlshillSZPolygon.setMap(map);
+		var boatquaySZPolygon = new google.maps.Polygon({
+			paths: boatquaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		boatquaySZPolygon.setMap(map);
+		var hendersonhillSZPolygon = new google.maps.Polygon({
+			paths: hendersonhillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hendersonhillSZPolygon.setMap(map);
+		var redhillSZPolygon = new google.maps.Polygon({
+			paths: redhillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		redhillSZPolygon.setMap(map);
+		var alexandrahillSZPolygon = new google.maps.Polygon({
+			paths: alexandrahillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		alexandrahillSZPolygon.setMap(map);
+		var bukithosweeSZPolygon = new google.maps.Polygon({
+			paths: bukithosweeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bukithosweeSZPolygon.setMap(map);
+		var clarkequaySZPolygon = new google.maps.Polygon({
+			paths: clarkequaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		clarkequaySZPolygon.setMap(map);
+		var telokblangahriseSZPolygon = new google.maps.Polygon({
+			paths: telokblangahriseSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		telokblangahriseSZPolygon.setMap(map);
+		var tanjongpagarSZPolygon = new google.maps.Polygon({
+			paths: tanjongpagarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tanjongpagarSZPolygon.setMap(map);
+		var evertonparkSZPolygon = new google.maps.Polygon({
+			paths: evertonparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		evertonparkSZPolygon.setMap(map);
+		var telokblangahwaySZPolygon = new google.maps.Polygon({
+			paths: telokblangahwaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		telokblangahwaySZPolygon.setMap(map);
+		var maxwellSZPolygon = new google.maps.Polygon({
+			paths: maxwellSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		maxwellSZPolygon.setMap(map);
+		var cecilSZPolygon = new google.maps.Polygon({
+			paths: cecilSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		cecilSZPolygon.setMap(map);
+		var kampongtiongbahruSZPolygon = new google.maps.Polygon({
+			paths: kampongtiongbahruSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kampongtiongbahruSZPolygon.setMap(map);
+		var telokblangahdriveSZPolygon = new google.maps.Polygon({
+			paths: telokblangahdriveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		telokblangahdriveSZPolygon.setMap(map);
+		var pasirpanjang2SZPolygon = new google.maps.Polygon({
+			paths: pasirpanjang2SZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		pasirpanjang2SZPolygon.setMap(map);
+		var pasirpanjang1SZPolygon = new google.maps.Polygon({
+			paths: pasirpanjang1SZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		pasirpanjang1SZPolygon.setMap(map);
+		var queenswaySZPolygon = new google.maps.Polygon({
+			paths: queenswaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		queenswaySZPolygon.setMap(map);
+		var kentridgeSZPolygon = new google.maps.Polygon({
+			paths: kentridgeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kentridgeSZPolygon.setMap(map);
+		var alexandranorthSZPolygon = new google.maps.Polygon({
+			paths: alexandranorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		alexandranorthSZPolygon.setMap(map);
+		var marinaeastSZPolygon = new google.maps.Polygon({
+			paths: marinaeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		marinaeastSZPolygon.setMap(map);
+		var institutionhillSZPolygon = new google.maps.Polygon({
+			paths: institutionhillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		institutionhillSZPolygon.setMap(map);
+		var robertsonquaySZPolygon = new google.maps.Polygon({
+			paths: robertsonquaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		robertsonquaySZPolygon.setMap(map);
+		var jurongislandandbukomSZPolygon = new google.maps.Polygon({
+			paths: jurongislandandbukomSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		jurongislandandbukomSZPolygon.setMap(map);
+		var sudongSZPolygon = new google.maps.Polygon({
+			paths: sudongSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sudongSZPolygon.setMap(map);
+		var semakauSZPolygon = new google.maps.Polygon({
+			paths: semakauSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		semakauSZPolygon.setMap(map);
+		var southerngroupSZPolygon = new google.maps.Polygon({
+			paths: southerngroupSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		southerngroupSZPolygon.setMap(map);
+		var sentosaSZPolygon = new google.maps.Polygon({
+			paths: sentosaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sentosaSZPolygon.setMap(map);
+		var cityterminalsSZPolygon = new google.maps.Polygon({
+			paths: cityterminalsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		cityterminalsSZPolygon.setMap(map);
+		var ansonSZPolygon = new google.maps.Polygon({
+			paths: ansonSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		ansonSZPolygon.setMap(map);
+		var maritimesquareSZPolygon = new google.maps.Polygon({
+			paths: maritimesquareSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		maritimesquareSZPolygon.setMap(map);
+		var centralsubzoneSZPolygon = new google.maps.Polygon({
+			paths: centralsubzoneSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		centralsubzoneSZPolygon.setMap(map);
+		var singaporegeneralhospitalSZPolygon = new google.maps.Polygon({
+			paths: singaporegeneralhospitalSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		singaporegeneralhospitalSZPolygon.setMap(map);
+		var depotroadSZPolygon = new google.maps.Polygon({
+			paths: depotroadSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		depotroadSZPolygon.setMap(map);
+		var eastcoastSZPolygon = new google.maps.Polygon({
+			paths: eastcoastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		eastcoastSZPolygon.setMap(map);
+		var nationaluniversityofsporeSZPolygon = new google.maps.Polygon({
+			paths: nationaluniversityofsporeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		nationaluniversityofsporeSZPolygon.setMap(map);
+		var onetreehillSZPolygon = new google.maps.Polygon({
+			paths: onetreehillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		onetreehillSZPolygon.setMap(map);
+		var rochorcanalSZPolygon = new google.maps.Polygon({
+			paths: rochorcanalSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		rochorcanalSZPolygon.setMap(map);
+		var crawfordSZPolygon = new google.maps.Polygon({
+			paths: crawfordSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		crawfordSZPolygon.setMap(map);
+		var margaretdriveSZPolygon = new google.maps.Polygon({
+			paths: margaretdriveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		margaretdriveSZPolygon.setMap(map);
+		var tanglinSZPolygon = new google.maps.Polygon({
+			paths: tanglinSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		tanglinSZPolygon.setMap(map);
+		var marineparadeSZPolygon = new google.maps.Polygon({
+			paths: marineparadeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		marineparadeSZPolygon.setMap(map);
+		var tanglinhaltSZPolygon = new google.maps.Polygon({
+			paths: tanglinhaltSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tanglinhaltSZPolygon.setMap(map);
+		var mackenzieSZPolygon = new google.maps.Polygon({
+			paths: mackenzieSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		mackenzieSZPolygon.setMap(map);
+		var sungeiroadSZPolygon = new google.maps.Polygon({
+			paths: sungeiroadSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sungeiroadSZPolygon.setMap(map);
+		var onenorthSZPolygon = new google.maps.Polygon({
+			paths: onenorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		onenorthSZPolygon.setMap(map);
+		var tanjongrhuSZPolygon = new google.maps.Polygon({
+			paths: tanjongrhuSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tanjongrhuSZPolygon.setMap(map);
+		var mountbattenSZPolygon = new google.maps.Polygon({
+			paths: mountbattenSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		mountbattenSZPolygon.setMap(map);
+		var commonwealthSZPolygon = new google.maps.Polygon({
+			paths: commonwealthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		commonwealthSZPolygon.setMap(map);
+		var doverSZPolygon = new google.maps.Polygon({
+			paths: doverSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#ffff00',
+			fillOpacity: aliveState
+		});
+		doverSZPolygon.setMap(map);
+		var boulevardSZPolygon = new google.maps.Polygon({
+			paths: boulevardSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		boulevardSZPolygon.setMap(map);
+		var istananegaraSZPolygon = new google.maps.Polygon({
+			paths: istananegaraSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		istananegaraSZPolygon.setMap(map);
+		var littleindiaSZPolygon = new google.maps.Polygon({
+			paths: littleindiaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		littleindiaSZPolygon.setMap(map);
+		var gulbasinSZPolygon = new google.maps.Polygon({
+			paths: gulbasinSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		gulbasinSZPolygon.setMap(map);
+		var ridoutSZPolygon = new google.maps.Polygon({
+			paths: ridoutSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		ridoutSZPolygon.setMap(map);
+		var cairnhillSZPolygon = new google.maps.Polygon({
+			paths: cairnhillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		cairnhillSZPolygon.setMap(map);
+		var clementiwestSZPolygon = new google.maps.Polygon({
+			paths: clementiwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		clementiwestSZPolygon.setMap(map);
+		var tuasviewextensionSZPolygon = new google.maps.Polygon({
+			paths: tuasviewextensionSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tuasviewextensionSZPolygon.setMap(map);
+		var monkshillSZPolygon = new google.maps.Polygon({
+			paths: monkshillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		monkshillSZPolygon.setMap(map);
+		var siglapSZPolygon = new google.maps.Polygon({
+			paths: siglapSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		siglapSZPolygon.setMap(map);
+		var clementiwoodsSZPolygon = new google.maps.Polygon({
+			paths: clementiwoodsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		clementiwoodsSZPolygon.setMap(map);
+		var fortcanningSZPolygon = new google.maps.Polygon({
+			paths: fortcanningSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		fortcanningSZPolygon.setMap(map);
+		var marinaeastmpSZPolygon = new google.maps.Polygon({
+			paths: marinaeastmpSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		marinaeastmpSZPolygon.setMap(map);
+		var marinacentreSZPolygon = new google.maps.Polygon({
+			paths: marinacentreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		marinacentreSZPolygon.setMap(map);
+		var somersetSZPolygon = new google.maps.Polygon({
+			paths: somersetSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		somersetSZPolygon.setMap(map);
+		var bencoolenSZPolygon = new google.maps.Polygon({
+			paths: bencoolenSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bencoolenSZPolygon.setMap(map);
+		var chatsworthSZPolygon = new google.maps.Polygon({
+			paths: chatsworthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		chatsworthSZPolygon.setMap(map);
+		var pioneersectorSZPolygon = new google.maps.Polygon({
+			paths: pioneersectorSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pioneersectorSZPolygon.setMap(map);
+		var penjurucrescentSZPolygon = new google.maps.Polygon({
+			paths: penjurucrescentSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		penjurucrescentSZPolygon.setMap(map);
+		var orangegroveSZPolygon = new google.maps.Polygon({
+			paths: orangegroveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		orangegroveSZPolygon.setMap(map);
+		var kampongbugisSZPolygon = new google.maps.Polygon({
+			paths: kampongbugisSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kampongbugisSZPolygon.setMap(map);
+		var kampongglamSZPolygon = new google.maps.Polygon({
+			paths: kampongglamSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kampongglamSZPolygon.setMap(map);
+		var selegieSZPolygon = new google.maps.Polygon({
+			paths: selegieSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		selegieSZPolygon.setMap(map);
+		var mountemilySZPolygon = new google.maps.Polygon({
+			paths: mountemilySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		mountemilySZPolygon.setMap(map);
+		var jookoonSZPolygon = new google.maps.Polygon({
+			paths: jookoonSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		jookoonSZPolygon.setMap(map);
+		var kallangwaySZPolygon = new google.maps.Polygon({
+			paths: kallangwaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kallangwaySZPolygon.setMap(map);
+		var internationalbusinessparkSZPolygon = new google.maps.Polygon({
+			paths: internationalbusinessparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		internationalbusinessparkSZPolygon.setMap(map);
+		var tukangSZPolygon = new google.maps.Polygon({
+			paths: tukangSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tukangSZPolygon.setMap(map);
+		var coronationroadSZPolygon = new google.maps.Polygon({
+			paths: coronationroadSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		coronationroadSZPolygon.setMap(map);
+		var kembanganSZPolygon = new google.maps.Polygon({
+			paths: kembanganSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		kembanganSZPolygon.setMap(map);
+		var katongSZPolygon = new google.maps.Polygon({
+			paths: katongSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		katongSZPolygon.setMap(map);
+		var hollanddriveSZPolygon = new google.maps.Polygon({
+			paths: hollanddriveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hollanddriveSZPolygon.setMap(map);
+		var farrerparkSZPolygon = new google.maps.Polygon({
+			paths: farrerparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		farrerparkSZPolygon.setMap(map);
+		var newtoncircusSZPolygon = new google.maps.Polygon({
+			paths: newtoncircusSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		newtoncircusSZPolygon.setMap(map);
+		var jurongportSZPolygon = new google.maps.Polygon({
+			paths: jurongportSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		jurongportSZPolygon.setMap(map);
+		var samulunSZPolygon = new google.maps.Polygon({
+			paths: samulunSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		samulunSZPolygon.setMap(map);
+		var shipyardSZPolygon = new google.maps.Polygon({
+			paths: shipyardSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		shipyardSZPolygon.setMap(map);
+		var ghimmohSZPolygon = new google.maps.Polygon({
+			paths: ghimmohSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		ghimmohSZPolygon.setMap(map);
+		var lavenderSZPolygon = new google.maps.Polygon({
+			paths: lavenderSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		lavenderSZPolygon.setMap(map);
+		var goodwoodparkSZPolygon = new google.maps.Polygon({
+			paths: goodwoodparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		goodwoodparkSZPolygon.setMap(map);
+		var pandanSZPolygon = new google.maps.Polygon({
+			paths: pandanSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pandanSZPolygon.setMap(map);
+		var singaporepolytechnicSZPolygon = new google.maps.Polygon({
+			paths: singaporepolytechnicSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		singaporepolytechnicSZPolygon.setMap(map);
+		var clementicentralSZPolygon = new google.maps.Polygon({
+			paths: clementicentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		clementicentralSZPolygon.setMap(map);
+		var kampongjavaSZPolygon = new google.maps.Polygon({
+			paths: kampongjavaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kampongjavaSZPolygon.setMap(map);
+		var boonkengSZPolygon = new google.maps.Polygon({
+			paths: boonkengSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		boonkengSZPolygon.setMap(map);
+		var kallangbahruSZPolygon = new google.maps.Polygon({
+			paths: kallangbahruSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kallangbahruSZPolygon.setMap(map);
+		var ulupandanSZPolygon = new google.maps.Polygon({
+			paths: ulupandanSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		ulupandanSZPolygon.setMap(map);
+		var farrercourtSZPolygon = new google.maps.Polygon({
+			paths: farrercourtSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		farrercourtSZPolygon.setMap(map);
+		var tuasviewSZPolygon = new google.maps.Polygon({
+			paths: tuasviewSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tuasviewSZPolygon.setMap(map);
+		var nassimSZPolygon = new google.maps.Polygon({
+			paths: nassimSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		nassimSZPolygon.setMap(map);
+		var westcoastSZPolygon = new google.maps.Polygon({
+			paths: westcoastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		westcoastSZPolygon.setMap(map);
+		var bayshoreSZPolygon = new google.maps.Polygon({
+			paths: bayshoreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bayshoreSZPolygon.setMap(map);
+		var benoisectorSZPolygon = new google.maps.Polygon({
+			paths: benoisectorSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		benoisectorSZPolygon.setMap(map);
+		var gulcircleSZPolygon = new google.maps.Polygon({
+			paths: gulcircleSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		gulcircleSZPolygon.setMap(map);
+		var aljuniedSZPolygon = new google.maps.Polygon({
+			paths: aljuniedSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		aljuniedSZPolygon.setMap(map);
+		var tyersallSZPolygon = new google.maps.Polygon({
+			paths: tyersallSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tyersallSZPolygon.setMap(map);
+		var moulmeinSZPolygon = new google.maps.Polygon({
+			paths: moulmeinSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		moulmeinSZPolygon.setMap(map);
+		var liufangSZPolygon = new google.maps.Polygon({
+			paths: liufangSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		liufangSZPolygon.setMap(map);
+		var frankelSZPolygon = new google.maps.Polygon({
+			paths: frankelSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		frankelSZPolygon.setMap(map);
+		var clementinorthSZPolygon = new google.maps.Polygon({
+			paths: clementinorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		clementinorthSZPolygon.setMap(map);
+		var brasbasahSZPolygon = new google.maps.Polygon({
+			paths: brasbasahSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		brasbasahSZPolygon.setMap(map);
+		var oxleySZPolygon = new google.maps.Polygon({
+			paths: oxleySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		oxleySZPolygon.setMap(map);
+		var cityhallSZPolygon = new google.maps.Polygon({
+			paths: cityhallSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		cityhallSZPolygon.setMap(map);
+		var meichinSZPolygon = new google.maps.Polygon({
+			paths: meichinSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		meichinSZPolygon.setMap(map);
+		var leoniehillSZPolygon = new google.maps.Polygon({
+			paths: leoniehillSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		leoniehillSZPolygon.setMap(map);
+		var portSZPolygon = new google.maps.Polygon({
+			paths: portSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		portSZPolygon.setMap(map);
+		var dhobyghautSZPolygon = new google.maps.Polygon({
+			paths: dhobyghautSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		dhobyghautSZPolygon.setMap(map);
+		var bugisSZPolygon = new google.maps.Polygon({
+			paths: bugisSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bugisSZPolygon.setMap(map);
+		var victoriaSZPolygon = new google.maps.Polygon({
+			paths: victoriaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#FFFF00',
+			fillOpacity: strongState
+		});
+		victoriaSZPolygon.setMap(map);
+		var patersonSZPolygon = new google.maps.Polygon({
+			paths: patersonSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		patersonSZPolygon.setMap(map);
+		var tuasbaySZPolygon = new google.maps.Polygon({
+			paths: tuasbaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tuasbaySZPolygon.setMap(map);
+		var leedonparkSZPolygon = new google.maps.Polygon({
+			paths: leedonparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		leedonparkSZPolygon.setMap(map);
+		var geylangeastSZPolygon = new google.maps.Polygon({
+			paths: geylangeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		geylangeastSZPolygon.setMap(map);
+		var tebangardensSZPolygon = new google.maps.Polygon({
+			paths: tebangardensSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tebangardensSZPolygon.setMap(map);
+		var jurongriverSZPolygon = new google.maps.Polygon({
+			paths: jurongriverSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		jurongriverSZPolygon.setMap(map);
+		var geylangbahruSZPolygon = new google.maps.Polygon({
+			paths: geylangbahruSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		geylangbahruSZPolygon.setMap(map);
+		var faberSZPolygon = new google.maps.Polygon({
+			paths: faberSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		faberSZPolygon.setMap(map);
+		var malcolmSZPolygon = new google.maps.Polygon({
+			paths: malcolmSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		malcolmSZPolygon.setMap(map);
+		var bedoksouthSZPolygon = new google.maps.Polygon({
+			paths: bedoksouthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bedoksouthSZPolygon.setMap(map);
+		var tampineseastSZPolygon = new google.maps.Polygon({
+			paths: tampineseastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tampineseastSZPolygon.setMap(map);
+		var kakibukitSZPolygon = new google.maps.Polygon({
+			paths: kakibukitSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kakibukitSZPolygon.setMap(map);
+		var yuhuaeastSZPolygon = new google.maps.Polygon({
+			paths: yuhuaeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yuhuaeastSZPolygon.setMap(map);
+		var bukitbatoksouthSZPolygon = new google.maps.Polygon({
+			paths: bukitbatoksouthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bukitbatoksouthSZPolygon.setMap(map);
+		var jurongwestcentralSZPolygon = new google.maps.Polygon({
+			paths: jurongwestcentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		jurongwestcentralSZPolygon.setMap(map);
+		var bedokreservoirSZPolygon = new google.maps.Polygon({
+			paths: bedokreservoirSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		bedokreservoirSZPolygon.setMap(map);
+		var anakbukitSZPolygon = new google.maps.Polygon({
+			paths: anakbukitSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		anakbukitSZPolygon.setMap(map);
+		var swissclubSZPolygon = new google.maps.Polygon({
+			paths: swissclubSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		swissclubSZPolygon.setMap(map);
+		var xilinSZPolygon = new google.maps.Polygon({
+			paths: xilinSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		xilinSZPolygon.setMap(map);
+		var simeiSZPolygon = new google.maps.Polygon({
+			paths: simeiSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		simeiSZPolygon.setMap(map);
+		var boonlayplaceSZPolygon = new google.maps.Polygon({
+			paths: boonlayplaceSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		boonlayplaceSZPolygon.setMap(map);
+		var bukitbatokeastSZPolygon = new google.maps.Polygon({
+			paths: bukitbatokeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bukitbatokeastSZPolygon.setMap(map);
+		var bukitbatokwestSZPolygon = new google.maps.Polygon({
+			paths: bukitbatokwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bukitbatokwestSZPolygon.setMap(map);
+		var bukitbatokcentralSZPolygon = new google.maps.Polygon({
+			paths: bukitbatokcentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bukitbatokcentralSZPolygon.setMap(map);
+		var upperpayalebarSZPolygon = new google.maps.Polygon({
+			paths: upperpayalebarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		upperpayalebarSZPolygon.setMap(map);
+		var taisengSZPolygon = new google.maps.Polygon({
+			paths: taisengSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		taisengSZPolygon.setMap(map);
+		var tengehSZPolygon = new google.maps.Polygon({
+			paths: tengehSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tengehSZPolygon.setMap(map);
+		var yuhuawestSZPolygon = new google.maps.Polygon({
+			paths: yuhuawestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yuhuawestSZPolygon.setMap(map);
+		var yunnanSZPolygon = new google.maps.Polygon({
+			paths: yunnanSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yunnanSZPolygon.setMap(map);
+		var lorongchuanSZPolygon = new google.maps.Polygon({
+			paths: lorongchuanSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		lorongchuanSZPolygon.setMap(map);
+		var hongkahSZPolygon = new google.maps.Polygon({
+			paths: hongkahSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hongkahSZPolygon.setMap(map);
+		var tuaspromenadeSZPolygon = new google.maps.Polygon({
+			paths: tuaspromenadeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tuaspromenadeSZPolygon.setMap(map);
+		var airportroadSZPolygon = new google.maps.Polygon({
+			paths: airportroadSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		airportroadSZPolygon.setMap(map);
+		var serangooncentralSZPolygon = new google.maps.Polygon({
+			paths: serangooncentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		serangooncentralSZPolygon.setMap(map);
+		var bishaneastSZPolygon = new google.maps.Polygon({
+			paths: bishaneastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bishaneastSZPolygon.setMap(map);
+		var tampineswestSZPolygon = new google.maps.Polygon({
+			paths: tampineswestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tampineswestSZPolygon.setMap(map);
+		var brickworksSZPolygon = new google.maps.Polygon({
+			paths: brickworksSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		brickworksSZPolygon.setMap(map);
+		var dunearnSZPolygon = new google.maps.Polygon({
+			paths: dunearnSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		dunearnSZPolygon.setMap(map);
+		var sunsetwaySZPolygon = new google.maps.Polygon({
+			paths: sunsetwaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sunsetwaySZPolygon.setMap(map);
+		var macphersonSZPolygon = new google.maps.Polygon({
+			paths: macphersonSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		macphersonSZPolygon.setMap(map);
+		var kimkeatSZPolygon = new google.maps.Polygon({
+			paths: kimkeatSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kimkeatSZPolygon.setMap(map);
+		var bedoknorthSZPolygon = new google.maps.Polygon({
+			paths: bedoknorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bedoknorthSZPolygon.setMap(map);
+		var toapayohcentralSZPolygon = new google.maps.Polygon({
+			paths: toapayohcentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		toapayohcentralSZPolygon.setMap(map);
+		var juronggatewaySZPolygon = new google.maps.Polygon({
+			paths: juronggatewaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		juronggatewaySZPolygon.setMap(map);
+		var hollandroadSZPolygon = new google.maps.Polygon({
+			paths: hollandroadSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hollandroadSZPolygon.setMap(map);
+		var kampongubiSZPolygon = new google.maps.Polygon({
+			paths: kampongubiSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kampongubiSZPolygon.setMap(map);
+		var sennettSZPolygon = new google.maps.Polygon({
+			paths: sennettSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sennettSZPolygon.setMap(map);
+		var potongpasirSZPolygon = new google.maps.Polygon({
+			paths: potongpasirSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		potongpasirSZPolygon.setMap(map);
+		var bendemeerSZPolygon = new google.maps.Polygon({
+			paths: bendemeerSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		bendemeerSZPolygon.setMap(map);
+		var balestierSZPolygon = new google.maps.Polygon({
+			paths: balestierSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		balestierSZPolygon.setMap(map);
+		var joosengSZPolygon = new google.maps.Polygon({
+			paths: joosengSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		joosengSZPolygon.setMap(map);
+		var chinbeeSZPolygon = new google.maps.Polygon({
+			paths: chinbeeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		chinbeeSZPolygon.setMap(map);
+		var lorong8toapayohSZPolygon = new google.maps.Polygon({
+			paths: lorong8toapayohSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		lorong8toapayohSZPolygon.setMap(map);
+		var tohguanSZPolygon = new google.maps.Polygon({
+			paths: tohguanSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tohguanSZPolygon.setMap(map);
+		var braddellSZPolygon = new google.maps.Polygon({
+			paths: braddellSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		braddellSZPolygon.setMap(map);
+		var bidadariSZPolygon = new google.maps.Polygon({
+			paths: bidadariSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#FFFF00',
+			fillOpacity: strongState
+		});
+		bidadariSZPolygon.setMap(map);
+		var woodleighSZPolygon = new google.maps.Polygon({
+			paths: woodleighSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		woodleighSZPolygon.setMap(map);
+		var tamanjurongSZPolygon = new google.maps.Polygon({
+			paths: tamanjurongSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tamanjurongSZPolygon.setMap(map);
+		var lakesideSZPolygon = new google.maps.Polygon({
+			paths: lakesideSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		lakesideSZPolygon.setMap(map);
+		var toapayohwestSZPolygon = new google.maps.Polygon({
+			paths: toapayohwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		toapayohwestSZPolygon.setMap(map);
+		var defuindustrialparkSZPolygon = new google.maps.Polygon({
+			paths: defuindustrialparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		defuindustrialparkSZPolygon.setMap(map);
+		var guilinSZPolygon = new google.maps.Polygon({
+			paths: guilinSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		guilinSZPolygon.setMap(map);
+		var marymountSZPolygon = new google.maps.Polygon({
+			paths: marymountSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		marymountSZPolygon.setMap(map);
+		var wenyaSZPolygon = new google.maps.Polygon({
+			paths: wenyaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		wenyaSZPolygon.setMap(map);
+		var naturereserveSZPolygon = new google.maps.Polygon({
+			paths: naturereserveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		naturereserveSZPolygon.setMap(map);
+		var hillviewSZPolygon = new google.maps.Polygon({
+			paths: hillviewSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hillviewSZPolygon.setMap(map);
+		var changibaySZPolygon = new google.maps.Polygon({
+			paths: changibaySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		changibaySZPolygon.setMap(map);
+		var payalebareastSZPolygon = new google.maps.Polygon({
+			paths: payalebareastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		payalebareastSZPolygon.setMap(map);
+		var upperthomsonSZPolygon = new google.maps.Polygon({
+			paths: upperthomsonSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		upperthomsonSZPolygon.setMap(map);
+		var hongkahnorthSZPolygon = new google.maps.Polygon({
+			paths: hongkahnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hongkahnorthSZPolygon.setMap(map);
+		var townsvilleSZPolygon = new google.maps.Polygon({
+			paths: townsvilleSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		townsvilleSZPolygon.setMap(map);
+		var kovanSZPolygon = new google.maps.Polygon({
+			paths: kovanSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		kovanSZPolygon.setMap(map);
+		var chongboonSZPolygon = new google.maps.Polygon({
+			paths: chongboonSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		chongboonSZPolygon.setMap(map);
+		var shangrilaSZPolygon = new google.maps.Polygon({
+			paths: shangrilaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		shangrilaSZPolygon.setMap(map);
+		var shangrilaSZPolygon = new google.maps.Polygon({
+			paths: shangrilaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		shangrilaSZPolygon.setMap(map);
+		var serangoongardenSZPolygon = new google.maps.Polygon({
+			paths: serangoongardenSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		serangoongardenSZPolygon.setMap(map);
+		var hougangcentralSZPolygon = new google.maps.Polygon({
+			paths: hougangcentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hougangcentralSZPolygon.setMap(map);
+		var loyangeastSZPolygon = new google.maps.Polygon({
+			paths: loyangeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		loyangeastSZPolygon.setMap(map);
+		var dairyfarmSZPolygon = new google.maps.Polygon({
+			paths: dairyfarmSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		dairyfarmSZPolygon.setMap(map);
+		var pasirrisdriveSZPolygon = new google.maps.Polygon({
+			paths: pasirrisdriveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pasirrisdriveSZPolygon.setMap(map);
+		var tampinesnorthSZPolygon = new google.maps.Polygon({
+			paths: tampinesnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tampinesnorthSZPolygon.setMap(map);
+		var chengsanSZPolygon = new google.maps.Polygon({
+			paths: chengsanSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		chengsanSZPolygon.setMap(map);
+		var angmokiotowncentreSZPolygon = new google.maps.Polygon({
+			paths: angmokiotowncentreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		angmokiotowncentreSZPolygon.setMap(map);
+		var kebunbahruSZPolygon = new google.maps.Polygon({
+			paths: kebunbahruSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kebunbahruSZPolygon.setMap(map);
+		var serangoonnorthindestateSZPolygon = new google.maps.Polygon({
+			paths: serangoonnorthindestateSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		serangoonnorthindestateSZPolygon.setMap(map);
+		var tengahSZPolygon = new google.maps.Polygon({
+			paths: tengahSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		tengahSZPolygon.setMap(map);
+		var serangoonnorthSZPolygon = new google.maps.Polygon({
+			paths: serangoonnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		serangoonnorthSZPolygon.setMap(map);
+		var pasirriscentralSZPolygon = new google.maps.Polygon({
+			paths: pasirriscentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pasirriscentralSZPolygon.setMap(map);
+		var gombakSZPolygon = new google.maps.Polygon({
+			paths: gombakSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		gombakSZPolygon.setMap(map);
+		var plabSZPolygon = new google.maps.Polygon({
+			paths: plabSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		plabSZPolygon.setMap(map);
+		var payalebarnorthSZPolygon = new google.maps.Polygon({
+			paths: payalebarnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		payalebarnorthSZPolygon.setMap(map);
+		var hougangeastSZPolygon = new google.maps.Polygon({
+			paths: hougangeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hougangeastSZPolygon.setMap(map);
+		var loronghalusSZPolygon = new google.maps.Polygon({
+			paths: loronghalusSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		loronghalusSZPolygon.setMap(map);
+		var kangkarSZPolygon = new google.maps.Polygon({
+			paths: kangkarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kangkarSZPolygon.setMap(map);
+		var sembawanghillsSZPolygon = new google.maps.Polygon({
+			paths: sembawanghillsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sembawanghillsSZPolygon.setMap(map);
+		var jelebuSZPolygon = new google.maps.Polygon({
+			paths: jelebuSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		jelebuSZPolygon.setMap(map);
+		var keathongSZPolygon = new google.maps.Polygon({
+			paths: keathongSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		keathongSZPolygon.setMap(map);
+		var hougangwestSZPolygon = new google.maps.Polygon({
+			paths: hougangwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hougangwestSZPolygon.setMap(map);
+		var payalebarwestSZPolygon = new google.maps.Polygon({
+			paths: payalebarwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		payalebarwestSZPolygon.setMap(map);
+		var bangkitSZPolygon = new google.maps.Polygon({
+			paths: bangkitSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		bangkitSZPolygon.setMap(map);
+		var loronghalusnorthSZPolygon = new google.maps.Polygon({
+			paths: loronghalusnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		loronghalusnorthSZPolygon.setMap(map);
+		var pengsiangSZPolygon = new google.maps.Polygon({
+			paths: pengsiangSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pengsiangSZPolygon.setMap(map);
+		var pasirriswestSZPolygon = new google.maps.Polygon({
+			paths: pasirriswestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pasirriswestSZPolygon.setMap(map);
+		var yiochukangwestSZPolygon = new google.maps.Polygon({
+			paths: yiochukangwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yiochukangwestSZPolygon.setMap(map);
+		var trafalgarSZPolygon = new google.maps.Polygon({
+			paths: trafalgarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		trafalgarSZPolygon.setMap(map);
+		var teckwhyeSZPolygon = new google.maps.Polygon({
+			paths: teckwhyeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		teckwhyeSZPolygon.setMap(map);
+		var tuasnorthSZPolygon = new google.maps.Polygon({
+			paths: tuasnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tuasnorthSZPolygon.setMap(map);
+		var peichunSZPolygon = new google.maps.Polygon({
+			paths: peichunSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		peichunSZPolygon.setMap(map);
+		var boonteckSZPolygon = new google.maps.Polygon({
+			paths: boonteckSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		boonteckSZPolygon.setMap(map);
+		var kianteckSZPolygon = new google.maps.Polygon({
+			paths: kianteckSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kianteckSZPolygon.setMap(map);
+		var saftiSZPolygon = new google.maps.Polygon({
+			paths: saftiSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		saftiSZPolygon.setMap(map);
+		var tohtuckSZPolygon = new google.maps.Polygon({
+			paths: tohtuckSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tohtuckSZPolygon.setMap(map);
+		var mountpleasantSZPolygon = new google.maps.Polygon({
+			paths: mountpleasantSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		mountpleasantSZPolygon.setMap(map);
+		var hillcrestSZPolygon = new google.maps.Polygon({
+			paths: hillcrestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		hillcrestSZPolygon.setMap(map);
+		var saujanaSZPolygon = new google.maps.Polygon({
+			paths: saujanaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		saujanaSZPolygon.setMap(map);
+		var seletarhillsSZPolygon = new google.maps.Polygon({
+			paths: seletarhillsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		seletarhillsSZPolygon.setMap(map);
+		var compassvaleSZPolygon = new google.maps.Polygon({
+			paths: compassvaleSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		compassvaleSZPolygon.setMap(map);
+		var yiochukangeastSZPolygon = new google.maps.Polygon({
+			paths: yiochukangeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yiochukangeastSZPolygon.setMap(map);
+		var yiochukangSZPolygon = new google.maps.Polygon({
+			paths: yiochukangSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#FFFF00',
+			fillOpacity: strongState
+		});
+		yiochukangSZPolygon.setMap(map);
+		var loyangwestSZPolygon = new google.maps.Polygon({
+			paths: loyangwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		loyangwestSZPolygon.setMap(map);
+		var tagoreSZPolygon = new google.maps.Polygon({
+			paths: tagoreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tagoreSZPolygon.setMap(map);
+		var lorongahsooSZPolygon = new google.maps.Polygon({
+			paths: lorongahsooSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		lorongahsooSZPolygon.setMap(map);
+		var floradriveSZPolygon = new google.maps.Polygon({
+			paths: floradriveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		floradriveSZPolygon.setMap(map);
+		var choachukangcentralSZPolygon = new google.maps.Polygon({
+			paths: choachukangcentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		choachukangcentralSZPolygon.setMap(map);
+		var changiwestSZPolygon = new google.maps.Polygon({
+			paths: changiwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		changiwestSZPolygon.setMap(map);
+		var fajarSZPolygon = new google.maps.Polygon({
+			paths: fajarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		fajarSZPolygon.setMap(map);
+		var senjaSZPolygon = new google.maps.Polygon({
+			paths: senjaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		senjaSZPolygon.setMap(map);
+		var waterwayeastSZPolygon = new google.maps.Polygon({
+			paths: waterwayeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		waterwayeastSZPolygon.setMap(map);
+		var galibatuSZPolygon = new google.maps.Polygon({
+			paths: galibatuSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		galibatuSZPolygon.setMap(map);
+		var springleafSZPolygon = new google.maps.Polygon({
+			paths: springleafSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		springleafSZPolygon.setMap(map);
+		var punggoltowncentreSZPolygon = new google.maps.Polygon({
+			paths: punggoltowncentreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		punggoltowncentreSZPolygon.setMap(map);
+		var neesoonSZPolygon = new google.maps.Polygon({
+			paths: neesoonSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		neesoonSZPolygon.setMap(map);
+		var lowerseletarSZPolygon = new google.maps.Polygon({
+			paths: lowerseletarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		lowerseletarSZPolygon.setMap(map);
+		var northshoreSZPolygon = new google.maps.Polygon({
+			paths: northshoreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		northshoreSZPolygon.setMap(map);
+		var mandaiestateSZPolygon = new google.maps.Polygon({
+			paths: mandaiestateSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		mandaiestateSZPolygon.setMap(map);
+		var yishuncentralSZPolygon = new google.maps.Polygon({
+			paths: yishuncentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yishuncentralSZPolygon.setMap(map);
+		var pulaupunggoltimorSZPolygon = new google.maps.Polygon({
+			paths: pulaupunggoltimorSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pulaupunggoltimorSZPolygon.setMap(map);
+		var turfclubSZPolygon = new google.maps.Polygon({
+			paths: turfclubSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState //guess
+		});
+		turfclubSZPolygon.setMap(map);
+		var woodlandssouthSZPolygon = new google.maps.Polygon({
+			paths: woodlandssouthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		woodlandssouthSZPolygon.setMap(map);
+		var woodgroveSZPolygon = new google.maps.Polygon({
+			paths: woodgroveSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		woodgroveSZPolygon.setMap(map);
+		var yishuneastSZPolygon = new google.maps.Polygon({
+			paths: yishuneastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yishuneastSZPolygon.setMap(map);
+		var westernwatercatchmentSZPolygon = new google.maps.Polygon({
+			paths: westernwatercatchmentSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		westernwatercatchmentSZPolygon.setMap(map);
+		var pulaupunggolbaratSZPolygon = new google.maps.Polygon({
+			paths: pulaupunggolbaratSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pulaupunggolbaratSZPolygon.setMap(map);
+		var yishunwestSZPolygon = new google.maps.Polygon({
+			paths: yishunwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yishunwestSZPolygon.setMap(map);
+		var woodlandsregionalcentreSZPolygon = new google.maps.Polygon({
+			paths: woodlandsregionalcentreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		woodlandsregionalcentreSZPolygon.setMap(map);
+		var northeasternislandsSZPolygon = new google.maps.Polygon({
+			paths: northeasternislandsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		northeasternislandsSZPolygon.setMap(map);
+		var northeasternislandsSZPolygon = new google.maps.Polygon({
+			paths: northeasternislandsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		northeasternislandsSZPolygon.setMap(map);
+		var mandaieastSZPolygon = new google.maps.Polygon({
+			paths: mandaieastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		mandaieastSZPolygon.setMap(map);
+		var simpangsouthSZPolygon = new google.maps.Polygon({
+			paths: simpangsouthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		simpangsouthSZPolygon.setMap(map);
+		var northlandSZPolygon = new google.maps.Polygon({
+			paths: northlandSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		northlandSZPolygon.setMap(map);
+		var midviewSZPolygon = new google.maps.Polygon({
+			paths: midviewSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		midviewSZPolygon.setMap(map);
+		var woodlandswestSZPolygon = new google.maps.Polygon({
+			paths: woodlandswestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		woodlandswestSZPolygon.setMap(map);
+		var sembawangspringsSZPolygon = new google.maps.Polygon({
+			paths: sembawangspringsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sembawangspringsSZPolygon.setMap(map);
+		var kranjiSZPolygon = new google.maps.Polygon({
+			paths: kranjiSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		kranjiSZPolygon.setMap(map);
+		var reservoirviewSZPolygon = new google.maps.Polygon({
+			paths: reservoirviewSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		reservoirviewSZPolygon.setMap(map);
+		var woodlandseastSZPolygon = new google.maps.Polygon({
+			paths: woodlandseastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		woodlandseastSZPolygon.setMap(map);
+		var sembawangcentralSZPolygon = new google.maps.Polygon({
+			paths: sembawangcentralSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sembawangcentralSZPolygon.setMap(map);
+		var greenwoodparkSZPolygon = new google.maps.Polygon({
+			paths: greenwoodparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		greenwoodparkSZPolygon.setMap(map);
+		var sembawangeastSZPolygon = new google.maps.Polygon({
+			paths: sembawangeastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sembawangeastSZPolygon.setMap(map);
+		var senokowestSZPolygon = new google.maps.Polygon({
+			paths: senokowestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		senokowestSZPolygon.setMap(map);
+		var pasirrisparkSZPolygon = new google.maps.Polygon({
+			paths: pasirrisparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pasirrisparkSZPolygon.setMap(map);
+		var choachukangnorthSZPolygon = new google.maps.Polygon({
+			paths: choachukangnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		choachukangnorthSZPolygon.setMap(map);
+		var rivervaleSZPolygon = new google.maps.Polygon({
+			paths: rivervaleSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		rivervaleSZPolygon.setMap(map);
+		var changiairportSZPolygon = new google.maps.Polygon({
+			paths: changiairportSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		changiairportSZPolygon.setMap(map);
+		var yiochukangnorthSZPolygon = new google.maps.Polygon({
+			paths: yiochukangnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yiochukangnorthSZPolygon.setMap(map);
+		var punggolcanalSZPolygon = new google.maps.Polygon({
+			paths: punggolcanalSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		punggolcanalSZPolygon.setMap(map);
+		var centralwatercatchmentSZPolygon = new google.maps.Polygon({
+			paths: centralwatercatchmentSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		centralwatercatchmentSZPolygon.setMap(map);
+		var seletarSZPolygon = new google.maps.Polygon({
+			paths: seletarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		seletarSZPolygon.setMap(map);
+		var pulauseletarSZPolygon = new google.maps.Polygon({
+			paths: pulauseletarSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pulauseletarSZPolygon.setMap(map);
+		var admiraltySZPolygon = new google.maps.Polygon({
+			paths: admiraltySZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		admiraltySZPolygon.setMap(map);
+		var limchukangSZPolygon = new google.maps.Polygon({
+			paths: limchukangSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		limchukangSZPolygon.setMap(map);
+		var simpangnorthSZPolygon = new google.maps.Polygon({
+			paths: simpangnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		simpangnorthSZPolygon.setMap(map);
+		var senokosouthSZPolygon = new google.maps.Polygon({
+			paths: senokosouthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		senokosouthSZPolygon.setMap(map);
+		var sembawangnorthSZPolygon = new google.maps.Polygon({
+			paths: sembawangnorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sembawangnorthSZPolygon.setMap(map);
+		var tanjongirauSZPolygon = new google.maps.Polygon({
+			paths: tanjongirauSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		tanjongirauSZPolygon.setMap(map);
+		var pangsuaSZPolygon = new google.maps.Polygon({
+			paths: pangsuaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pangsuaSZPolygon.setMap(map);
+		var seletaraerospaceparkSZPolygon = new google.maps.Polygon({
+			paths: seletaraerospaceparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		seletaraerospaceparkSZPolygon.setMap(map);
+		var khatibSZPolygon = new google.maps.Polygon({
+			paths: khatibSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		khatibSZPolygon.setMap(map);
+		var mandaiwestSZPolygon = new google.maps.Polygon({
+			paths: mandaiwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		mandaiwestSZPolygon.setMap(map);
+		var coneyislandSZPolygon = new google.maps.Polygon({
+			paths: coneyislandSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		coneyislandSZPolygon.setMap(map);
+		var yishunsouthSZPolygon = new google.maps.Polygon({
+			paths: yishunsouthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		yishunsouthSZPolygon.setMap(map);
+		var thewharvesSZPolygon = new google.maps.Polygon({
+			paths: thewharvesSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		thewharvesSZPolygon.setMap(map);
+		var senokonorthSZPolygon = new google.maps.Polygon({
+			paths: senokonorthSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		senokonorthSZPolygon.setMap(map);
+		var changipointSZPolygon = new google.maps.Polygon({
+			paths: changipointSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		changipointSZPolygon.setMap(map);
+		var sengkangtowncentreSZPolygon = new google.maps.Polygon({
+			paths: sengkangtowncentreSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sengkangtowncentreSZPolygon.setMap(map);
+		var anchorvaleSZPolygon = new google.maps.Polygon({
+			paths: anchorvaleSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		anchorvaleSZPolygon.setMap(map);
+		var sengkangwestSZPolygon = new google.maps.Polygon({
+			paths: sengkangwestSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sengkangwestSZPolygon.setMap(map);
+		var fernvaleSZPolygon = new google.maps.Polygon({
+			paths: fernvaleSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		fernvaleSZPolygon.setMap(map);
+		var punggolfieldSZPolygon = new google.maps.Polygon({
+			paths: punggolfieldSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		punggolfieldSZPolygon.setMap(map);
+		var yewteeSZPolygon = new google.maps.Polygon({
+			paths: yewteeSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: deadState
+		});
+		yewteeSZPolygon.setMap(map);
+		var pasirriswaferfabparkSZPolygon = new google.maps.Polygon({
+			paths: pasirriswaferfabparkSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		pasirriswaferfabparkSZPolygon.setMap(map);
+		var matildaSZPolygon = new google.maps.Polygon({
+			paths: matildaSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		matildaSZPolygon.setMap(map);
+		var northcoastSZPolygon = new google.maps.Polygon({
+			paths: northcoastSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		northcoastSZPolygon.setMap(map);
+		var sembawangstraitsSZPolygon = new google.maps.Polygon({
+			paths: sembawangstraitsSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		sembawangstraitsSZPolygon.setMap(map);
+		var straitsviewSZPolygon = new google.maps.Polygon({
+			paths: straitsviewSZ,
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: szColor,
+			fillOpacity: aliveState
+		});
+		straitsviewSZPolygon.setMap(map);
+		 
+		var pastaamk = {lat: 1.3620919, lng:103.85456709999994};
+		var pastabishan = {lat: 1.3499710000000003,lng:103.84879400000001};
+		var pastacauseway = {lat: 1.435855,lng: 103.78622199999995};
+		var pastanex = {lat: 1.350644,lng: 103.87180599999999};
+		var pastanorthpoint = {lat: 1.429848,lng: 103.835554};
+		var pastasengkang = {lat: 1.396759,lng:103.88669099999993}; //SengKang Sports Recreation Centre		
+		var pastasunplaza = {lat: 1.448417,lng: 103.81916690000003}; //PastaMania - Sun Plaza		
+		var pastacck = {lat:1.3912873,lng:103.74787190000006}; //PastaMania - Choa Chu Kang Delivery Hub		
+		var pastafair = {lat:1.327351,lng:103.67883600000005};//PastaMania - FairPrice Hub 
+		var pastahillion = {lat:1.3783401,lng:103.76398090000002};//PastaMania - Hillion Mall 		
+		var pastajem = {lat:1.3330671,lng:103.74365990000003};//PastaMania - JEM\ 
+		var pastajurongeast = {lat:1.346852,lng:103.729195};//PastaMania - Jurong East Swimming Complex 		
+		var pastalotone = {lat:1.384848,lng:103.745046};//PastaMania - Lot One Shoppers\u0027 Mall 		
+		var pastawestmall = {lat:1.349649,lng:103.74910699999998};//"PastaMania - West Mall 		
+		var pastabugis = {lat:1.299369,lng:103.85492099999999};//PastaMania - Bugis Junction 		
+		var pastacathay = {lat:1.301555,lng:103.83665999999994};//PastaMania - Cathay Cineleisure 		
+		var pastacitysquare = {lat:1.311403,lng:103.85662000000002};//PastaMania - City Square Mall 
+		var pastafareast = {lat:1.307249,lng:103.83335799999998};//PastaMania - Far East Plaza (Kiosk) 		
+		var pastaharbourfront = {lat:1.264553,lng:103.81930399999999};//PastaMania - HarbourFront Centre 		
+		var pastambc = {lat:1.2749379,lng:103.79892900000004};//PastaMania - Mapletree Business City 		
+		var pastasmu = {lat:1.296653,lng:103.85059690000003};//PastaMania - Singapore Management University 		
+		var pastadowntowneast = {lat:1.3790849,lng:103.95513900000003};//PastaMania - Downtown East E!hub 		
+		var pastakallang = {lat:1.3023579,lng:103.87644499999999};//PastaMania - Kallang Leisure Park		
+		var pastapp = {lat:1.301072,lng:103.90528100000006};//PastaMania - Parkway Parade		
+		var pastatamp = {lat:1.3526609,lng:103.945245};//PastaMania - Tampines Mall	
+		var pastaviva = {lat:1.3230336,lng:103.9220851};//PastaMania- Viva Business Park	
+		var pastaairport = {lat:1.3567160000000003,lng:103.98650999999997}; //PastaMania - Changi Terminal 3
+		
+		var marker = new google.maps.Marker({
+          position: pastaamk,
+          map: map,
+          title: 'PastaMania - Ang Mo Kio Delivery Hub'
+        });
+		var marker = new google.maps.Marker({
+          position: pastabishan,
+          map: map,
+          title: 'PastaMania - Bishan Junction 8'
+        });
+		var marker = new google.maps.Marker({
+          position: pastacauseway,
+          map: map,
+          title: 'PastaMania - Causeway Point'
+        });
+		var marker = new google.maps.Marker({
+          position: pastanex,
+          map: map,
+          title: 'PastaMania - Nex'
+        });
+		var marker = new google.maps.Marker({
+          position: pastanorthpoint,
+          map: map,
+          title: 'PastaMania - North Point'
+        });		
+		var marker = new google.maps.Marker({
+          position: pastasengkang,
+          map: map,
+          title: 'PastaMania - Sengkang Sports Centre'
+        });		
+		var marker = new google.maps.Marker({
+          position: pastasunplaza,
+          map: map,
+          title: 'PastaMania - Sun Plaza'
+        });		
+		var marker = new google.maps.Marker({
+          position: pastacck,
+          map: map,
+          title: 'PastaMania - Choa Chu Kang Delivery Hub'
+        });		
+		var marker = new google.maps.Marker({
+          position: pastafair,
+          map: map,
+          title: 'PastaMania - FairPrice Hub '
+        }); 		
+		var marker = new google.maps.Marker({
+          position: pastahillion,
+          map: map,
+          title: 'PastaMania - Hillion Mall'
+        }); 		
+		var marker = new google.maps.Marker({
+          position: pastajem,
+          map: map,
+          title: 'PastaMania - JEM' 
+        }); 		
+		var marker = new google.maps.Marker({
+          position: pastajurongeast,
+          map: map,
+          title: 'PastaMania - Jurong East' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastalotone,
+          map: map,
+          title: 'PastaMania - Lot One' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastawestmall,
+          map: map,
+          title: 'PastaMania - west mall' 
+        });		
+		var marker = new google.maps.Marker({
+          position: pastabugis,
+          map: map,
+          title: 'PastaMania - bugis' 
+        });		
+		var marker = new google.maps.Marker({
+          position: pastacathay,
+          map: map,
+          title: 'PastaMania - cathay' 
+        });		
+		var marker = new google.maps.Marker({
+          position: pastacitysquare,
+          map: map,
+          title: 'PastaMania - city square' 
+        });		
+		var marker = new google.maps.Marker({
+          position: pastafareast,
+          map: map,
+          title: 'PastaMania - far east ' 
+        });		
+		var marker = new google.maps.Marker({
+          position: pastaharbourfront,
+          map: map,
+          title: 'PastaMania - harbourfront center' 
+        });		
+		var marker = new google.maps.Marker({
+          position: pastambc,
+          map: map,
+          title: 'PastaMania - MBC' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastasmu,
+          map: map,
+          title: 'PastaMania - smu' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastadowntowneast,
+          map: map,
+          title: 'PastaMania - downtown east' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastakallang,
+          map: map,
+          title: 'PastaMania - kallang leisure park' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastapp,
+          map: map,
+          title: 'PastaMania - parkway' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastatamp,
+          map: map,
+          title: 'PastaMania - tampines' 
+        });
+		var marker = new google.maps.Marker({
+          position: pastaviva,
+          map: map,
+          title: 'PastaMania - viva' 
+        });		
+		var marker = new google.maps.Marker({
+		
+          position: pastaairport,
+          map: map,
+          title: 'PastaMania - airport t3' 
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastaamk,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastabishan,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastacauseway,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastanex,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastanorthpoint,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastasengkang,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastasunplaza,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastacck,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastafair,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastahillion,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastajem,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastajurongeast,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastalotone,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastawestmall,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastabugis,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastacathay,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastacitysquare,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastafareast,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastaharbourfront,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastambc,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastadowntowneast,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastakallang,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastapp,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastatamp,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastaviva,
+			radius: 2700
+        });
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#00FF00',
+			fillOpacity: 0.35,
+			map: map,
+			center: pastaairport,
+			radius: 2700
+        });
+		
+		// Battersea road
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#000000',
+			fillOpacity: 0.6,
+			map: map,
+			center: {lat:1.4086872,lng:103.88059529999998},
+			radius: 800
+        });
+		
+		// Old Seng Poh Market
+		new google.maps.Circle({
+			strokeColor: '#FF0000',
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: '#000000',
+			fillOpacity: 0.6,
+			map: map,
+			center: {lat:1.2848964,lng:103.83238959999994},
+			radius: 800
+        });	
+		
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+    async defer></script>
+  </body>
+</html>
