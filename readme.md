@@ -16,4 +16,6 @@ index.html
 paszcoords.js
 - Stores the coordinates for URA MP2014 Planning Areas and Subzone boundaries, used by index.html
 
-Full documentation on my blog: https://luppeng.wordpress.com/2017/09/30/treasure-hunt-using-google-maps/
+
+## Full Documentation 
+I blogged about how I used these files to participate in a treasure hunt: https://luppeng.wordpress.com/2017/09/30/treasure-hunt-using-google-maps/
